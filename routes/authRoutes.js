@@ -23,7 +23,6 @@ const mailer = async (recieveremail, code) => {
             pass: process.env.GMAIL_APP_PASSWORD
         }
     })
-
     let info = await transporter.sendMail({
         from: "Team MastersGang",
         to: recieveremail,
@@ -170,9 +169,11 @@ router.get('/checklogin', authTokenHandler, async (req, res, next) => {
 
 
 router.get('/getuser', authTokenHandler, async (req, res, next) => {
+
     try {
         const user = await User.findById(req.userId).select('-password');
-     
+
+
         if (!user) {
             return responseFunction(res, 400, 'User not found', null, false);
         }

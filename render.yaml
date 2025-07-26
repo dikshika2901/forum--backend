@@ -1,9 +1,9 @@
 services:
--type:web
-name:mastersgang-backend
-env:node
-branch:main
-buildCommand:npm install
-startCommand:node index.js
-plan:free
-autoDeploy:true
+-type: web
+name: mastersgang-backend
+env: node
+branch: main
+buildCommand: npm install
+startCommand: node index.js
+plan: free
+autoDeploy: true
